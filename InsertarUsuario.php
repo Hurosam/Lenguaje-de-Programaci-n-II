@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/UsuarioController.php";
 session_start();
 $uc = new UsuarioController();
@@ -37,3 +38,6 @@ $usuarios = $uc->mostrar();
     <input type="submit" value="Insertar">
 </form>
 
+<?php
+require_once "layout/footer.php";
+?>
