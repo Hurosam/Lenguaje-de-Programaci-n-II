@@ -18,28 +18,31 @@ $establecimientos = $ec->mostrar();
 
 <h2>INSETAR NUEVO ESTABLECIMIENTO</h2>
 <form method="post" action=<?php echo $_SERVER["PHP_SELF"]; ?>>
-    <label for="nombre">Nombre:</label>
-    <input type="text" name="nombre" placeholder="Ingrese nombre" required>
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese nombre" required>
     <br>
-    <label for="direccion">Dirección:</label>
-    <input type="text" name="direccion" placeholder="Ingrese dirección" required>
+    <label for="direccion">Dirección</label>
+    <input type="text" name="nombre" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese dirección" required>
+    
     <br>
-    <label for="tipo">Tipo:</label>
-    <select id="tipo" name="tipo" required>
+    <label for="tipo">Tipo</label>
+    <select class="form-select" aria-label="Default select example" id="tipo" name="tipo" required>
         <option value="Hotel">Hotel</option>
         <option value="Campo">Campo</option>
         <option value="Resorts">Resorts</option>
         <option value="Cabañas">Cabañas</option>
     </select>
+
     <br>
-    <label for="contacto">Contacto:</label>
-    <input type="text" name="contacto" placeholder="Ingrese contacto" required>
+    <label for="contacto">Contacto</label>
+    <input type="text" name="contacto" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese contacto" required>
     <br>
-    <label for="responsable">Responsable:</label>
-    <input type="number" name="responsable" placeholder="Ingrese ID del responsable">
+    <label for="responsable">Responsable</label>
+    <input type="number" name="responsable" class="form-control" id="exampleInputEmail1"  placeholder="Ingrese ID del responsable" required>
     <br>
     <input type="submit" value="Insertar">
 </form>
 <?php
 require_once "layout/footer.php";
 ?>
+
