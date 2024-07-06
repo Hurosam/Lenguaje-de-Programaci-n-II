@@ -16,5 +16,18 @@ class UsuarioController {
         $usuario = new Usuario(null, $nombres, $apellidos, $correo, $contrasena, $rol);
         $usuario->insertar();
     }
+
+    public function eliminar($id) {
+        $this->usuario->eliminar($id);
+    }
+
+    public function guardar($id, $nombres, $apellidos, $correo, $contrasena, $rol) {
+        $usuario = new Usuario(null, $nombres, $apellidos, $correo, $contrasena, $rol);
+        $usuario->guardar();
+    }
+
+    public function modificar($id) {
+        $this->usuario->modificar($id);
+    }
 }
 ?>
