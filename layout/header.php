@@ -38,6 +38,15 @@
           <a class="nav-link" href="InsertarCapacitacion.php">Insertar</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">Usuarios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="MostrarUsuario.php">Mostrar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="InsertarUsuario.php">Insertar</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link" href="Logout.php">Salir</a>
         </li>
       </ul>

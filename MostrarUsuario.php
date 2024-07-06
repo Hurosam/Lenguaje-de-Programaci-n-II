@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/UsuarioController.php";
 session_start();
 $uc = new UsuarioController();
@@ -57,3 +58,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["modificar_id"])) {
     }
     ?>
 </table>
+<?php
+require_once "layout/footer.php";
+?>
