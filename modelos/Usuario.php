@@ -9,7 +9,7 @@ class Usuario {
     private $contrasena;
     private $rol;
 
-    public function __construct(/*$id = null, $nombres = null, $apellidos = null, $correo = null, $contrasena = null, $rol = null*/) {
+    public function __construct() {
         /*$this->id = $id;
         $this->nombres = $nombres;
         $this->apellidos = $apellidos;
