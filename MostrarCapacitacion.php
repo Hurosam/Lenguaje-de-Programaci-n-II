@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/CapacitacionController.php";
 session_start();
 $cc = new CapacitacionController();
@@ -27,3 +28,6 @@ $capacitaciones = $cc->mostrar();
     }
     ?>
 </table>
+<?php
+require_once "layout/footer.php";
+?>

@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/EstablecimientoController.php";
 session_start();
 $ec = new EstablecimientoController();
@@ -39,3 +40,6 @@ $establecimientos = $ec->mostrar();
     <br>
     <input type="submit" value="Insertar">
 </form>
+<?php
+require_once "layout/footer.php";
+?>

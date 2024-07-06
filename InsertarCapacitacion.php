@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/CapacitacionController.php";
 session_start();
 $cc = new CapacitacionController();
@@ -30,3 +31,6 @@ $capacitaciones = $cc->mostrar();
     <br>
     <input type="submit" value="Insertar">
 </form>
+<?php
+require_once "layout/footer.php";
+?>

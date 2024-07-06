@@ -1,4 +1,5 @@
 <?php
+require_once "layout/header.php";
 require_once "controladores/EstablecimientoController.php";
 session_start();
 $ec = new EstablecimientoController();
@@ -7,7 +8,7 @@ $establecimientos = $ec->mostrar();
 ?>
 
 <h2>MOSTRAR LOS ESTABLECIMIENTOS</h2>
-<table class="table">
+<table class="table table-hover">
     <tr>
         <th>ID</th>
         <th>Nombre</th>
@@ -29,3 +30,7 @@ $establecimientos = $ec->mostrar();
     }
     ?>
 </table>
+
+<?php
+require_once "layout/footer.php";
+?>
