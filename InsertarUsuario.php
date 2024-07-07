@@ -18,7 +18,7 @@ $usuarios = $uc->mostrar();
 <h2>INSERTAR NUEVO USUARIO</h2>
 <form method="post" action=<?php echo $_SERVER["PHP_SELF"]; ?>>
     <label for="nombres">Nombres</label>
-    <input type="text" name="nombres"  class="form-control" id="exampleInputEmail1" laceholder="Ingrese nombre"required>
+    <input type="text" name="nombres"  class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre"required>
     <br>
     <label for="apellidos">Apellidos</label>
     <input type="text" name="apellidos" class="form-control" id="exampleInputEmail1" placeholder="Ingrese apellido"required>
