@@ -1,3 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Usuario</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <?php include 'layout/header.php'; ?>
+
+    <div class="container">
+        <div class="form-container">
+            <h2 class="text-center">Ingresar Usuario</h2>
+            <?php
+            // Ejemplo de mensaje de error
+            if (isset($_GET['error'])) {
+                echo '<div class="alert alert-danger" role="alert">Error al insertar el usuario. Por favor, intente nuevamente.</div>';
+            }
+            ?>
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" class="form-control" id="nombres" name="nombres" placeholder="Ingrese nombres" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" class="form-control" id="apellidos" name="apellidos" placeholder="Ingrese apellidos" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo</label>
+                    <input type="email" class="form-control" id="correo" name="correo" placeholder="Ingrese correo" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" class="form-control" id="contrasena" name="contrasena" placeholder="Ingrese contraseña" required>
+                </div>
+                <div class="form-group">
+                    <label for="rol">Rol</label>
+                    <select class="form-control" id="rol" name="rol" required>
+                        <option value="ResponsableCapacitacion">Responsable de Capacitación</option>
+                        <option value="Administrador">Administrador</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Insertar</button>
+            </form>
+        </div>
+    </div>
+
+    <?php include 'layout/footer.php'; ?>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
 <?php
 require_once "layout/header.php";
 require_once "controladores/UsuarioController.php";
@@ -14,30 +79,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 $usuarios = $uc->mostrar();
-?>
-<h2>INSERTAR NUEVO USUARIO</h2>
-<form method="post" action=<?php echo $_SERVER["PHP_SELF"]; ?>>
-    <label for="nombres">Nombres</label>
-    <input type="text" name="nombres"  class="form-control" id="exampleInputEmail1" placeholder="Ingrese nombre"required>
-    <br>
-    <label for="apellidos">Apellidos</label>
-    <input type="text" name="apellidos" class="form-control" id="exampleInputEmail1" placeholder="Ingrese apellido"required>
-    <br>
-    <label for="correo">Correo</label>
-    <input type="email" name="correo"  class="form-control" id="exampleInputEmail1" placeholder="Ingrese correo"required>
-    <br>
-    <label for="contrasena" class="form-label">Contraseña</label>
-    <input type="password" name="contrasena" class="form-control" id="exampleInputPassword1" placeholder="Ingrese contraseña"required>
-    <br>
-    <label for="rol">Rol</label>
-    <select class="form-select" aria-label="Default select example" id="rol" name="rol" required>
-        <option value="ResponsableCapacitacion">Responsable de Capacitación</option>
-        <option value="Administrador">Administrador</option>
-    </select>
-    <br>
-    <input type="submit" value="Insertar">
-</form>
-
-<?php
 require_once "layout/footer.php";
 ?>
