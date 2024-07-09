@@ -17,16 +17,16 @@ $usuarios = $uc->mostrar();
 <h2>INSERTAR NUEVO USUARIO</h2>
 <form method="post" action=<?php echo $_SERVER["PHP_SELF"]; ?>>
     <label for="nombres">Nombres:</label>
-    <input type="text" name="nombres"  placeholder="Ingrese nombre"required>
+    <input type="text" name="nombres"  placeholder="Ingrese nombre" required>
     <br>
     <label for="apellidos">Apellidos:</label>
-    <input type="text" name="apellidos"  placeholder="Ingrese apellido"required>
+    <input type="text" name="apellidos"  placeholder="Ingrese apellido" required>
     <br>
     <label for="correo">Correo:</label>
-    <input type="email" name="correo"  placeholder="Ingrese correo"required>
+    <input type="email" name="correo"  placeholder="Ingrese correo" required>
     <br>
     <label for="contrasena">Contraseña:</label>
-    <input type="password" name="contrasena"  placeholder="Ingrese contraseña"required>
+    <input type="password" name="contrasena"  placeholder="Ingrese contraseña" required>
     <br>
     <label for="rol">Rol:</label>
     <select id="rol" name="rol" required>
@@ -36,4 +36,3 @@ $usuarios = $uc->mostrar();
     <br>
     <input type="submit" value="Insertar">
 </form>
-

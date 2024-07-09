@@ -34,5 +34,46 @@ class Establecimiento {
         $conexion->exec($sql);
         $conn->cerrar();
     }
+
+    public function eliminar($id) {
+        $conn = new Conn();
+        $conexion = $conn->conectar();
+        $sql = "DELETE FROM Establecimiento WHERE id = {$id}";
+        $conexion->exec($sql);
+        $conn->cerrar();
+    }
+
+    public function guardar() {
+        if ($this->id) {
+            $this->actualizar();
+        } else {
+            $this->insertar();
+        }
+    }
+
+    public function modificar($id) {
+        $conn = new Conn();
+        $conexion = $conn->conectar();
+        $sql = "SELECT * FROM Establecimiento WHERE id = {$id}";
+        $resultado = $conexion->query($sql);
+        $establecimiento = $resultado->fetch(PDO::FETCH_ASSOC);
+
+        $this->id = $establecimiento['id'];
+        $this->nombre = $establecimiento['nombre'];
+        $this->direccion = $establecimiento['direccion'];
+        $this->tipo = $establecimiento['tipo'];
+        $this->contacto = $establecimiento['contacto'];
+        $this->responsable = $establecimiento['responsable'];
+
+        $conn->cerrar();
+    }
+
+    public function actualizar() {
+        $conn = new Conn();
+        $conexion = $conn->conectar();
+        $sql = "UPDATE Establecimiento SET nombre = '{$this->nombre}', direccion = '{$this->direccion}', tipo = '{$this->tipo}', contacto = '{$this->contacto}', responsable = '{$this->responsable}' WHERE id = {$this->id}";
+        $conexion->exec($sql);
+        $conn->cerrar();
+    }
 }
 ?>

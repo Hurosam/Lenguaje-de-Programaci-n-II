@@ -22,7 +22,7 @@ class UsuarioController {
     }
 
     public function guardar($id, $nombres, $apellidos, $correo, $contrasena, $rol) {
-        $usuario = new Usuario(null, $nombres, $apellidos, $correo, $contrasena, $rol);
+        $usuario = new Usuario($id, $nombres, $apellidos, $correo, $contrasena, $rol);
         $usuario->guardar();
     }
 
@@ -31,3 +31,4 @@ class UsuarioController {
     }
 }
 ?>
+
